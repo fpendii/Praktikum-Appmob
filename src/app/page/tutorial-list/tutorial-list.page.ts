@@ -12,7 +12,7 @@ export class TutorialListPage implements OnInit {
   tutorials : any[] = [];
   page = 1;
   images:string = "https://source.unsplash.com/random/50x50";
-  constructor(private tutorialService : TutorialService, 
+  constructor(private tutorialService : TutorialService,
               private loadingController : LoadingController) { }
   ngOnInit() {
     this.loadTutorial();
@@ -20,7 +20,7 @@ export class TutorialListPage implements OnInit {
   async loadTutorial(){
     const loading = await this.loadingController.create({
       message: 'loading ...',
-      spinner: 'bubbles'
+      spinner: 'crescent'
     });
     await loading.present();
 

@@ -6,7 +6,7 @@
 
 <ion-content [fullscreen]="true" class="ion-padding">
   <ion-list>
-  <ion-item-sliding *ngFor="let item of tutorials">
+  <ion-item-sliding routerLink="/tutorial/{{item.id}}" *ngFor="let item of tutorials">
     <ion-item button>
       <ion-avatar slot="start">
         <img src="{{images}}?sig={{item.id}}">

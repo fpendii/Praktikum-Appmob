@@ -24,7 +24,7 @@ export class TutorialService {
   //   // return this.http.post<{title:string,description:string}>(`${environment.baseUrl}/ionic/index.php?aksi=tambah`, data);
   // }
 
-  // getDetailTutorial(id: string | null):Observable<ApiTutorial>{
-  //   // return this.http.get<ApiTutorial>(`${environment.baseUrl}/ionic/index.php?id=${id}`);
-  // }
+  getDetailTutorial(id: string | null):Observable<ApiTutorial>{
+    return this.http.get<ApiTutorial>(`${environment.baseUrl}/ionic/index.php?id=${id}`);
+  }
 }

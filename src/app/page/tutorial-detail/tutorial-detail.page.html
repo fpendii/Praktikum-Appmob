@@ -8,5 +8,15 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-
+  <ion-card *ngFor="let tutorial of tutorialdetail">
+    <img alt="Silhouette of mountains" src="{{images}}?sig={{tutorial.id}}" />
+    <ion-card-header>
+      <ion-card-title>{{tutorial.title}}</ion-card-title>
+      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{tutorial.description}}
+    </ion-card-content>
+  </ion-card>
 </ion-content>
