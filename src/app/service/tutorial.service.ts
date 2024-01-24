@@ -19,6 +19,10 @@ export class TutorialService {
     return this.http.get<ApiTutorial>(`${environment.baseUrl}/ionic/index.php`);
   }
 
+  getBuku():Observable<ApiTutorial>{
+    return this.http.get<ApiTutorial>(`${environment.baseUrl}/ionic/index_buku.php`);
+  }
+
   // tambahTutorial(data:{title:string, description:string}):Observable<{title:string, description:string}>{
   //   // console.log(data);
   //   // return this.http.post<{title:string,description:string}>(`${environment.baseUrl}/ionic/index.php?aksi=tambah`, data);
@@ -26,5 +30,17 @@ export class TutorialService {
 
   getDetailTutorial(id: string | null):Observable<ApiTutorial>{
     return this.http.get<ApiTutorial>(`${environment.baseUrl}/ionic/index.php?id=${id}`);
+  }
+
+  ambilTutorial(id:any):Observable<ApiTutorial>{
+    return this.http.get<ApiTutorial>(`${environment.baseUrl}/ionic/lihat.php?id=${id}`);
+  }
+
+  tambahTutorial(data:any){
+    return this.http.post(`${environment.baseUrl}/ionic/tambah.php`,data);
+  }
+
+  tambahBuku(data:any){
+    return this.http.post(`${environment.baseUrl}/ionic/tambahBuku.php`,data);
   }
 }

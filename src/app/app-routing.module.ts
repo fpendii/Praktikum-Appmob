@@ -19,6 +19,23 @@ const routes: Routes = [
     path: 'tutorial-add',
     loadChildren: () => import('./page/tutorial-add/tutorial-add.module').then( m => m.TutorialAddPageModule)
   },
+  {
+    path: 'buku/:id',
+    loadChildren: () => import('./buku/buku.module').then( m => m.BukuPageModule)
+  },  {
+    path: 'buku-list',
+    loadChildren: () => import('./buku-list/buku-list.module').then( m => m.BukuListPageModule)
+  },
+  {
+    path: 'buku-tambah',
+    loadChildren: () => import('./buku-tambah/buku-tambah.module').then( m => m.BukuTambahPageModule)
+  },
+  {
+    path: 'buku-detail',
+    loadChildren: () => import('./buku-detail/buku-detail.module').then( m => m.BukuDetailPageModule)
+  },
+
+
 ];
 
 @NgModule({

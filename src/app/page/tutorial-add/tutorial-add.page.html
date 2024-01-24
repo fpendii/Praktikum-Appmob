@@ -1,8 +1,38 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
-    <ion-title>tutorial add</ion-title>
+    <ion-title>Tambah Buku <ion-text color="danger">(Nurependi_2201301183)</ion-text></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Judul Buku</ion-label>
+      <ion-input [(ngModel)]="data.title" name="title" type="text"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Deskripsi</ion-label>
+      <ion-input [(ngModel)]="data.description" name="description" type="text"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Published</ion-label>
+      <ion-input [(ngModel)]="data.published" name="description" type="text"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Content</ion-label>
+      <ion-input [(ngModel)]="data.content" name="description" type="text"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="full" color="primary" (click)="tambahTutorial()">Tambah Data</ion-button>
 </ion-content>

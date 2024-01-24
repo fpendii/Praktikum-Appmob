@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Tambah Buku <ion-text color="danger">(Nurependi_2201301183)</ion-text></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tambah Buku</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-input
+      [(ngModel)]="data.judul"
+      name="judul"
+      label="Judul"
+      label-placement="floating"
+      fill="outline"
+      placeholder="Enter text"
+    ></ion-input>
+    <hr />
+    <ion-input
+      [(ngModel)]="data.penulis"
+      name="penulis"
+      label="Penulis"
+      label-placement="floating"
+      fill="outline"
+      placeholder="Enter text"
+    ></ion-input>
+    <hr />
+    <ion-input
+      [(ngModel)]="data.deskripsi"
+      name="deskripsi"
+      label="Deskripsi"
+      label-placement="floating"
+      fill="outline"
+      placeholder="Enter text"
+    ></ion-input>
+    <hr />
+    <ion-input
+      [(ngModel)]="data.stok"
+      name="stok"
+      label="Stok"
+      label-placement="floating"
+      fill="outline"
+      placeholder="Enter text"
+    ></ion-input>
+    <hr />
+
+    <ion-button expand="full" color="primary" (click)="tambahBuku()"
+      >Tambah Buku</ion-button
+    >
+  </ion-list>
+</ion-content>

@@ -1,21 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { NavController, ToastController } from '@ionic/angular';
 import { TutorialService } from 'src/app/service/tutorial.service';
+import { NavController, ToastController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-tutorial-add',
-  templateUrl: './tutorial-add.page.html',
-  styleUrls: ['./tutorial-add.page.scss'],
+  selector: 'app-buku-tambah',
+  templateUrl: './buku-tambah.page.html',
+  styleUrls: ['./buku-tambah.page.scss'],
 })
-export class TutorialAddPage implements OnInit {
+export class BukuTambahPage implements OnInit {
 
-  data: any = {
-    title: '',
-    description: '',
-    published: '',
-    content: ''
-  };
+  data : any = {
+    judul : '',
+    deskripsi : '',
+    penulis : '',
+    stok : ''
+  }
 
   constructor(
     public tutorialService: TutorialService,
@@ -23,16 +22,17 @@ export class TutorialAddPage implements OnInit {
     private toastController: ToastController
   ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+  }
 
-  tambahTutorial() {
+  tambahBuku(){
     console.log(this.data);
-    this.tutorialService.tambahTutorial(this.data).subscribe(
+    this.tutorialService.tambahBuku(this.data).subscribe(
       (response) => {
         console.log('Data berhasil ditambahkan:', response);
 
         // Navigasi ke halaman lain jika berhasil
-        this.navCtrl.navigateForward(['/tutorial']);
+        this.navCtrl.navigateForward(['/buku-list']);
 
         // Tampilkan notifikasi sukses
         this.tampilkanNotifikasi('Data berhasil ditambahkan', 'success');
@@ -55,4 +55,5 @@ export class TutorialAddPage implements OnInit {
 
     toast.present();
   }
+
 }
